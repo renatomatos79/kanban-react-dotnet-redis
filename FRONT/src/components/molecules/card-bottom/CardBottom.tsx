@@ -28,9 +28,9 @@ const CardBottom: React.FC<Props> = (props) => {
     const navContainer = () => {
         return (
             <>
-                <FaArrowCircleLeft size={20} style={isFirstColumn ? styles.iconDisabled : styles.icon}  onClick={() => handleLeftButtonClick()} />
-                <FaTrash size={20} style={styles.icon} onClick={() => props.onButtonClick(props.task, 'delete')} />
-                <FaArrowCircleRight size={20} style={isLastColumn ? styles.iconDisabled : styles.icon} onClick={() => handleRightButtonClick()} />
+                <FaArrowCircleLeft data-testid='btnMoveLeft' size={20} style={isFirstColumn ? styles.iconDisabled : styles.icon}  onClick={() => handleLeftButtonClick()} />
+                <FaTrash size={20} data-testid='btnDelete' style={styles.icon} onClick={() => props.onButtonClick(props.task, 'delete')} />
+                <FaArrowCircleRight data-testid='btnMoveRight' size={20} style={isLastColumn ? styles.iconDisabled : styles.icon} onClick={() => handleRightButtonClick()} />
             </>
         )
     }
@@ -38,8 +38,8 @@ const CardBottom: React.FC<Props> = (props) => {
     const editContainer = () => {
         return (
             <>
-                <TbCancel size={20} style={styles.icon} onClick={() => props.onButtonClick(props.task, 'cancel')} />
-                <FaSave size={20} style={styles.icon} onClick={() => props.onButtonClick(props.task, 'save')} />
+                <TbCancel data-testid='btnCancel' size={20} style={styles.icon} onClick={() => props.onButtonClick(props.task, 'cancel')} />
+                <FaSave data-testid='btnSave' size={20} style={styles.icon} onClick={() => props.onButtonClick(props.task, 'save')} />
             </>
         )
     }

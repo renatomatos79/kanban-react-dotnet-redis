@@ -13,7 +13,7 @@ const KanbanHeader: React.FC<Props> = (props) => {
     return (
         <div style={styles.container}>
             <Heading tamanho={3} titulo={props.titulo} style={styles.heading}></Heading>
-            <FaPlusCircle size={20} style={styles.icon} onClick={() => props.onButtonClick(props.lista)} />
+            <FaPlusCircle data-testid="btnAdd" size={20} style={styles.icon} onClick={() => props.onButtonClick(props.lista)} />
         </div>
     );
 };

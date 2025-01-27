@@ -42,8 +42,8 @@ docker-compose up -d --build
 ![image](https://github.com/user-attachments/assets/dabf6813-bcb3-4865-9abc-fe762025d0e2)
 
 # Links Uteis
-https://github.com/renatomatos79/kanban-react-dotnet-redis/blob/main/FRONT/README.md
-https://github.com/renatomatos79/kanban-react-dotnet-redis/blob/main/BACK/README.md
+- https://github.com/renatomatos79/kanban-react-dotnet-redis/blob/main/FRONT/README.md
+- https://github.com/renatomatos79/kanban-react-dotnet-redis/blob/main/BACK/README.md
 
 
 

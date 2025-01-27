@@ -42,11 +42,11 @@ Exemplo:
 # Building and Deploy a Docker Image login-backend
 
 ```sh
-docker build -t kanban-api:8.0.1 .
-docker tag kanban-api:8.0.1 renatomatos79/kanban-api:8.0.1
 docker login
-docker push renatomatos79/kanban-api:8.0.1
-docker run -d --name kanban-api-8.0.1 --restart unless-stopped -p 8080:8080 renatomatos79/kanban-api:8.0.1
-docker container logs login-backend
+docker build -t kanban-api:1.0.0 .
+docker tag kanban-api:1.0.0 renatomatos79/kanban-api:1.0.0
+docker push renatomatos79/kanban-api:1.0.0
+docker run -d --name kanban-api-backend --network=backend-bridge-network -e LOGIN_API_USERNAME=%APP_USERNAME% -e LOGIN_API_PASSWORD=%APP_PASSWORD% -e JWT_AUDIENCE=%APP_JWT_AUDIENCE% -e JWT_ISSUER=%APP_JWT_ISSUER% -e JWT_SECRET_KEY=%APP_JWT_SECRET_KEY% --restart unless-stopped -p 8086:8080 renatomatos79/kanban-api:1.0.0
+docker container logs kanban-api-backend
 ```
 

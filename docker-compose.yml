@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./FRONT
+      dockerfile: Dockerfile
+    container_name: kanban-app-front
+    ports:
+      - "8085:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./BACK
+      dockerfile: Dockerfile
+    container_name: kanban-api-backend
+    ports:
+      - "8086:8080"
+    environment:
+      - LOGIN_API_USERNAME=${APP_USERNAME}
+      - LOGIN_API_PASSWORD=${APP_PASSWORD}
+      - JWT_AUDIENCE=${APP_JWT_AUDIENCE}
+      - JWT_ISSUER=${APP_JWT_ISSUER}
+      - JWT_SECRET_KEY=${APP_JWT_SECRET_KEY}
+      - REDIS_HOST=redisserver
+      - REDIS_PORT=6379
+    depends_on:
+      - redisserver
+    networks:
+      - backend-bridge-network
+    restart: unless-stopped
+
+  redisserver:
+    image: redis:latest
+    container_name: redisserver
+    ports:
+      - "6379:6379"
+    networks:
+      - backend-bridge-network
+    restart: unless-stopped
+
+networks:
+  backend-bridge-network:
+    driver: bridge

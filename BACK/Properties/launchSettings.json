@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:24782",
+      "sslPort": 44326
+    }
+  },
+  "profiles": {
+    "KanbanApi": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5114",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "REDIS_HOST": "127.0.0.1:6379",
+        "LOGIN_API_USERNAME": "letscode",
+        "LOGIN_API_PASSWORD": "lets@123",
+        "JWT_SECRET_KEY": "33a19758-19c0-4be4-9582-f010eb7928f4",
+        "JWT_ISSUER": "https://renato-matos.com",
+        "JWT_AUDIENCE": "https://renato-matos.com"
+      }
+    }    
+  }
+}

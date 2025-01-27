@@ -1,0 +1,38 @@
+{
+  "name": "ada-prova",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env vite --mode dev",
+    "tsc": "tsc -b",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build:dist": "vite build --mode docker",
+    "docker:build": "docker build -t kanban-app-front:1.0.0 .",
+    "docker:run": "docker run -d --name kanban-app-front -p 8085:80 kanban-app-front:1.0.0",
+    "docker:full": "npm run tsc && npm run lint:fix && npm run build:dist && npm run docker:build && npm run docker:run"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dompurify": "^3.2.3",
+    "marked": "^15.0.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.2",
+    "vite": "^6.0.5"
+  }
+}

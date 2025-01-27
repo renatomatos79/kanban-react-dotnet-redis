@@ -1,0 +1,1 @@
+export enum KanbanColumnEnum { New = 'Novo', Todo = 'ToDo', Doing = 'Doing', Done = 'Done' }

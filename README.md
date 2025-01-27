@@ -1,10 +1,12 @@
 # Sobre o repositorio
 Este projeto contem as seguintes pastas
 - ## FRONT: App kanban feita em React@18
+Clique no GIF abaixo para visualizar o funcionamento da app!
 ![Kanban](https://github.com/user-attachments/assets/e9fec469-15cf-4cb5-bd35-a4ec85f48981)
 
 
 - ## BACK: Api para gestao do Kanban usando .NET Core 8 / Redis
+Clique no GIF abaixo para visualizar o funcionamento do backend!
 ![API-Kanban](https://github.com/user-attachments/assets/32349a8d-e4a1-4a3b-8dce-bbf88cc3ebd0)
 
 ```sh

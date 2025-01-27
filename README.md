@@ -46,6 +46,60 @@ docker-compose up -d --build
 => Containers em execução
 ![image](https://github.com/user-attachments/assets/58ebd405-a047-4de9-b027-c94cb8b5892e)
 
+# Atenção
+Caso não pretenda construir as imagens localmente, como alternativa, use o conteúdo abaixo em seu docker-compose.yml file
+```
+version: '3.8'
+
+services:
+  frontend:
+    image: renatomatos79/kanban-app-front:1.0.0
+    container_name: kanban-app-front
+    ports:
+      - "8085:80"
+    depends_on:
+      - backend
+
+  backend:
+    image: renatomatos79/kanban-api:1.0.0
+    container_name: kanban-api-backend
+    ports:
+      - "8086:8080"
+    environment:
+      - LOGIN_API_USERNAME=${APP_USERNAME}
+      - LOGIN_API_PASSWORD=${APP_PASSWORD}
+      - JWT_AUDIENCE=${APP_JWT_AUDIENCE}
+      - JWT_ISSUER=${APP_JWT_ISSUER}
+      - JWT_SECRET_KEY=${APP_JWT_SECRET_KEY}
+      - REDIS_HOST=redisserver
+      - REDIS_PORT=6379
+    depends_on:
+      - redisserver
+    networks:
+      - backend-bridge-network
+    restart: unless-stopped
+
+  redisserver:
+    image: redis:latest
+    container_name: redisserver
+    ports:
+      - "6379:6379"
+    networks:
+      - backend-bridge-network
+    restart: unless-stopped
+
+networks:
+  backend-bridge-network:
+    driver: bridge
+```
+
+Então execute:
+```
+docker-compose up -d
+```
+![image](https://github.com/user-attachments/assets/a6884d4c-43c0-44e7-aa3a-7fa1fb1198f4)
+
+
 
 # Links Uteis
 - https://github.com/renatomatos79/kanban-react-dotnet-redis/blob/main/FRONT/README.md

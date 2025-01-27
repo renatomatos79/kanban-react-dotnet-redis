@@ -11,6 +11,7 @@
     "build:dist": "vite build --mode docker",
     "docker:build": "docker build -t kanban-app-front:1.0.0 .",
     "docker:run": "docker run -d --name kanban-app-front -p 8085:80 kanban-app-front:1.0.0",
+    "docker:run:hub": "docker run -d --name kanban-app-front -p 8085:80 renatomatos79/kanban-app-front:1.0.0",
     "docker:full": "npm run tsc && npm run lint:fix && npm run build:dist && npm run docker:build && npm run docker:run"
   },
   "dependencies": {

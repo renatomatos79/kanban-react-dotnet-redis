@@ -55,5 +55,9 @@ npm run docker:full
 docker login
 docker tag kanban-app-front:1.0.0 renatomatos79/kanban-app-front:1.0.0
 docker push renatomatos79/kanban-app-front:1.0.0
-docker container run -d --name kanban-app-front -p 8085:80 renatomatos79/kanban-app-front:1.0.0
+```
+
+### Usando imagem do Docker Hub
+```sh
+npm run docker:run:hub
 ```

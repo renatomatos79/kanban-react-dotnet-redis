@@ -14,7 +14,7 @@ const Kanban: React.FC = () => {
         { label: "Linkedin", href: "https://www.linkedin.com/in/renatomatos/" },
         { label: "Youtube", href: "https://www.youtube.com/renatomatos79" },
         { label: "Gmail", href: "mailto:renato.matos79@gmail.com" },
-        { label: "Github", href: "https://github.com/renatomatos79/Kanban" },
+        { label: "Github", href: "https://github.com/renatomatos79/kanban-react-dotnet-redis" },
     ];
 
     const [columns, setColumns] = useState<KanbanColumnsType>({

@@ -42,6 +42,19 @@ npm run lint
 npm run lint:fix
 ```
 
+### Usando vitest e vitest coverage
+Executando tests
+```sh
+npm run test
+```
+![alt text](image-1.png)
+
+Executando test:coverage
+```sh
+npm run test:coverage
+```
+![alt text](image.png)
+
 ### Build da imagem docker com execução local do container
 Não esquecer de informar o conteúdo das variáveis no arquivo "env.docker"
 Então execute o comando abaixo
